@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container">
+        <table class="table table-striped mt-2 mb-4">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" style="text-align:center;">ФИО</th>
+                <th scope="col" style="text-align:center;">номер телефона</th>
+                <th scope="col" style="text-align:center;">должность</th>
+                <th scope="col" style="text-align:center;">дата собеседования</th>
+                <th scope="col" style="text-align:center;">срок задания</th>
+                <th scope="col" style="text-align:center;">руководитель</th>
+                <th scope="col" style="text-align:center;">должность руководителя</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for applicant in applicants %}
+                <tr>
+                  <td>{{ applicant.full_name}}</td>
+                  <td>{{ applicant.telephone_number}}</td>
+                  <td>{{ applicant.position}}</td>
+                  <td>{{ applicant.date_of_interview}}</td>
+                  <td>{{ applicant.duration}}</td>
+                  <td>{{ applicant.interviewer_name}}</td>
+                  <td>{{ applicant.interviewer_position}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
