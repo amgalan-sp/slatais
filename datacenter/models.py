@@ -16,8 +16,8 @@ class Applicant(models.Model):
 class Mark(models.Model):
     """Отметка о получении задания"""
     text = models.TextField('отметка')
-    created = models.DateField('дата', db_index=True)
+    created = models.DateField('дата и время', null=True)
     interviewer_name = models.ForeignKey(Applicant, verbose_name='руководитель', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.applicant.full_name}"
+        return f"{self.interviewer_name}"

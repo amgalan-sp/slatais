@@ -20,4 +20,5 @@ from  slatais import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.show_start_page),
+    path('marks/', views.show_marks),   
 ]
