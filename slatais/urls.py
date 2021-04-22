@@ -18,7 +18,7 @@ from django.urls import path
 from  slatais import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.show_start_page),
-    path('marks/', views.show_marks),   
+    path('admin/', admin.site.urls, name="admin"),
+    path('', views.show_start_page, name="applicants"),
+    path('marks/', views.show_marks, name="marks"),   
 ]
