@@ -16,6 +16,6 @@ def show_start_page(request):
 def show_marks(request):
     marks = Mark.objects.all()
     context = {
-        "marks": sorted(marks, key=lambda paper: paper.interviewer_name)
+        "marks": sorted(marks, key=lambda paper: paper.created)
     }
     return render(request, 'marks.html', context)
